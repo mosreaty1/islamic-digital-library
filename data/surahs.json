@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name_arabic": "الفاتحة",
+    "name_english": "Al-Fatihah",
+    "verses_count": 7,
+    "revelation_place": "مكة"
+  },
+  {
+    "id": 2,
+    "name_arabic": "البقرة",
+    "name_english": "Al-Baqarah",
+    "verses_count": 286,
+    "revelation_place": "المدينة"
+  }
+]

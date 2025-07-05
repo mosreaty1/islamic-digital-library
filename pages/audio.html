@@ -1,0 +1,272 @@
+---
+layout: default
+title: مكتبة التلاوات
+---
+
+<div class="audio-page">
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                <i class="fas fa-volume-up"></i>
+                مكتبة التلاوات الصوتية
+            </h1>
+            <p>استمع إلى تلاوات جميلة للقرآن الكريم بأصوات أشهر القراء</p>
+        </div>
+        
+        <!-- القراء المميزون -->
+        <div class="featured-reciters">
+            <h2>القراء المميزون</h2>
+            <div class="reciters-grid">
+                <div class="reciter-card" data-reciter="mishary">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/mishary.jpg" alt="مشاري العفاسي">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>مشاري راشد العفاسي</h3>
+                        <p>الكويت</p>
+                        <span class="reciter-style">مرتل</span>
+                    </div>
+                </div>
+                
+                <div class="reciter-card" data-reciter="sudais">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/sudais.jpg" alt="عبدالرحمن السديس">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>عبد الرحمن السديس</h3>
+                        <p>السعودية</p>
+                        <span class="reciter-style">مرتل</span>
+                    </div>
+                </div>
+                
+                <div class="reciter-card" data-reciter="hudhaify">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/hudhaify.jpg" alt="علي الحذيفي">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>علي بن عبد الرحمن الحذيفي</h3>
+                        <p>السعودية</p>
+                        <span class="reciter-style">مرتل</span>
+                    </div>
+                </div>
+                
+                <div class="reciter-card" data-reciter="ajmi">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/ajmi.jpg" alt="أحمد العجمي">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>أحمد بن علي العجمي</h3>
+                        <p>السعودية</p>
+                        <span class="reciter-style">مرتل</span>
+                    </div>
+                </div>
+                
+                <div class="reciter-card" data-reciter="minshawi">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/minshawi.jpg" alt="محمد صديق المنشاوي">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>محمد صديق المنشاوي</h3>
+                        <p>مصر</p>
+                        <span class="reciter-style">مجود</span>
+                    </div>
+                </div>
+                
+                <div class="reciter-card" data-reciter="husary">
+                    <div class="reciter-image">
+                        <img src="/assets/images/reciters/husary.jpg" alt="محمود خليل الحصري">
+                    </div>
+                    <div class="reciter-info">
+                        <h3>محمود خليل الحصري</h3>
+                        <p>مصر</p>
+                        <span class="reciter-style">مجود</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- أدوات التحكم -->
+        <div class="audio-controls">
+            <div class="control-group">
+                <label for="reciter-select">اختر القارئ:</label>
+                <select id="reciter-select">
+                    <option value="mishary">مشاري راشد العفاسي</option>
+                    <option value="sudais">عبد الرحمن السديس</option>
+                    <option value="hudhaify">علي الحذيفي</option>
+                    <option value="ajmi">أحمد العجمي</option>
+                    <option value="minshawi">محمد صديق المنشاوي</option>
+                    <option value="husary">محمود خليل الحصري</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="quality-select">جودة الصوت:</label>
+                <select id="quality-select">
+                    <option value="high">عالية (320 kbps)</option>
+                    <option value="medium">متوسطة (128 kbps)</option>
+                    <option value="low">منخفضة (64 kbps)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="playback-speed">سرعة التشغيل:</label>
+                <input type="range" id="playback-speed" min="0.5" max="2" step="0.1" value="1">
+                <span id="speed-value">1x</span>
+            </div>
+        </div>
+        
+        <!-- قائمة السور -->
+        <div class="surahs-audio-list">
+            <h2>قائمة السور</h2>
+            <div class="audio-search">
+                <input type="text" id="audio-search" placeholder="ابحث عن سورة...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="surahs-audio-grid" id="surahs-audio-list">
+                <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
+            </div>
+        </div>
+        
+        <!-- مشغل الصوت الرئيسي -->
+        <div class="main-audio-player" id="main-audio-player">
+            <div class="player-info">
+                <div class="now-playing">
+                    <h3 id="current-surah-name">لم يتم اختيار سورة</h3>
+                    <p id="current-reciter-name">اختر قارئ وسورة للبدء</p>
+                </div>
+                <div class="surah-image">
+                    <img id="current-surah-image" src="/assets/images/quran-icon.png" alt="القرآن الكريم">
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button id="shuffle-btn" class="btn-icon">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button id="prev-surah-btn" class="btn-icon">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-pause-btn" class="btn-icon btn-primary">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-surah-btn" class="btn-icon">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button id="repeat-btn" class="btn-icon">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            
+            <div class="player-progress">
+                <div class="time-display">
+                    <span id="current-time">00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                        <div class="progress-handle" id="progress-handle"></div>
+                    </div>
+                </div>
+                <div class="time-display">
+                    <span id="total-time">00:00</span>
+                </div>
+            </div>
+            
+            <div class="player-volume">
+                <button id="volume-btn" class="btn-icon">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-slider">
+                    <input type="range" id="volume-range" min="0" max="100" value="70">
+                </div>
+            </div>
+            
+            <audio id="main-audio" preload="none"></audio>
+        </div>
+        
+        <!-- قائمة التشغيل -->
+        <div class="playlist-section">
+            <h2>قائمة التشغيل</h2>
+            <div class="playlist-controls">
+                <button id="save-playlist" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    حفظ القائمة
+                </button>
+                <button id="load-playlist" class="btn btn-secondary">
+                    <i class="fas fa-folder-open"></i>
+                    تحميل قائمة
+                </button>
+                <button id="clear-playlist" class="btn btn-danger">
+                    <i class="fas fa-trash"></i>
+                    مسح القائمة
+                </button>
+            </div>
+            
+            <div class="playlist" id="playlist">
+                <div class="playlist-empty">
+                    <i class="fas fa-music"></i>
+                    <p>قائمة التشغيل فارغة</p>
+                    <p>أضف سوراً من القائمة أعلاه</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- التلاوات المميزة -->
+        <div class="featured-recitations">
+            <h2>تلاوات مميزة</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="/assets/images/featured/fatiha.jpg" alt="سورة الفاتحة">
+                    </div>
+                    <div class="featured-info">
+                        <h3>سورة الفاتحة</h3>
+                        <p>مشاري العفاسي</p>
+                        <button class="btn btn-primary play-featured" data-surah="1" data-reciter="mishary">
+                            <i class="fas fa-play"></i>
+                            تشغيل
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="/assets/images/featured/yasin.jpg" alt="سورة يس">
+                    </div>
+                    <div class="featured-info">
+                        <h3>سورة يس</h3>
+                        <p>عبد الرحمن السديس</p>
+                        <button class="btn btn-primary play-featured" data-surah="36" data-reciter="sudais">
+                            <i class="fas fa-play"></i>
+                            تشغيل
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="/assets/images/featured/mulk.jpg" alt="سورة الملك">
+                    </div>
+                    <div class="featured-info">
+                        <h3>سورة الملك</h3>
+                        <p>علي الحذيفي</p>
+                        <button class="btn btn-primary play-featured" data-surah="67" data-reciter="hudhaify">
+                            <i class="fas fa-play"></i>
+                            تشغيل
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // تحميل مكتبة الصوتيات عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        loadAudioSurahs();
+        initializeAudioPlayer();
+        initializePlaylist();
+    });
+</script>

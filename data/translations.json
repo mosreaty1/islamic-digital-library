@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ar",
+    "name": "العربية",
+    "author": "النص الأصلي"
+  },
+  {
+    "id": "en",
+    "name": "English",
+    "author": "Sahih International"
+  },
+  {
+    "id": "ur",
+    "name": "اردو",
+    "author": "فتح محمد جالندھری"
+  }
+]

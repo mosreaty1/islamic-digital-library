@@ -1,0 +1,164 @@
+---
+layout: default
+title: القرآن الكريم
+---
+
+<div class="quran-page">
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                <i class="fas fa-book-open"></i>
+                القرآن الكريم
+            </h1>
+            <p>اقرأ واستمع إلى كتاب الله العزيز</p>
+        </div>
+        
+        <!-- أدوات التحكم -->
+        <div class="quran-controls">
+            <div class="control-group">
+                <label for="translation-select">الترجمة:</label>
+                <select id="translation-select">
+                    <option value="ar">العربية فقط</option>
+                    <option value="ar-en">العربية والإنجليزية</option>
+                    <option value="ar-ur">العربية والأردية</option>
+                    <option value="ar-fr">العربية والفرنسية</option>
+                    <option value="ar-tr">العربية والتركية</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="tafsir-select">التفسير:</label>
+                <select id="tafsir-select">
+                    <option value="none">بدون تفسير</option>
+                    <option value="tabari">تفسير الطبري</option>
+                    <option value="kathir">تفسير ابن كثير</option>
+                    <option value="qurtubi">تفسير القرطبي</option>
+                    <option value="saadi">تفسير السعدي</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="reciter-select">القارئ:</label>
+                <select id="reciter-select">
+                    <option value="mishary">مشاري العفاسي</option>
+                    <option value="hudhaify">علي الحذيفي</option>
+                    <option value="sudais">عبد الرحمن السديس</option>
+                    <option value="ajmi">أحمد العجمي</option>
+                    <option value="minshawi">محمد صديق المنشاوي</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <button id="tajweed-toggle" class="btn btn-secondary">
+                    <i class="fas fa-palette"></i>
+                    أحكام التجويد
+                </button>
+            </div>
+        </div>
+        
+        <!-- فهرس السور -->
+        <div class="surahs-index">
+            <h2>فهرس السور</h2>
+            <div class="search-surahs">
+                <input type="text" id="surah-search" placeholder="ابحث عن سورة...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="surahs-grid" id="surahs-list">
+                <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
+            </div>
+        </div>
+        
+        <!-- عرض السورة -->
+        <div class="surah-display" id="surah-display" style="display: none;">
+            <div class="surah-header">
+                <h2 id="surah-name"></h2>
+                <div class="surah-info">
+                    <span id="surah-type"></span>
+                    <span id="surah-verses"></span>
+                </div>
+                <div class="surah-controls">
+                    <button id="play-surah" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        تشغيل السورة
+                    </button>
+                    <button id="bookmark-surah" class="btn btn-secondary">
+                        <i class="fas fa-bookmark"></i>
+                        إضافة للمفضلة
+                    </button>
+                </div>
+            </div>
+            
+            <!-- البسملة -->
+            <div class="basmala" id="basmala">
+                <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            </div>
+            
+            <!-- الآيات -->
+            <div class="verses-container" id="verses-container">
+                <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
+            </div>
+            
+            <!-- تشغيل الصوت -->
+            <div class="audio-player" id="audio-player">
+                <div class="audio-controls">
+                    <button id="prev-verse" class="btn-icon">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="play-pause" class="btn-icon">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next-verse" class="btn-icon">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                <div class="audio-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">00:00</span>
+                        <span id="total-time">00:00</span>
+                    </div>
+                </div>
+                <audio id="audio-element" preload="none"></audio>
+            </div>
+        </div>
+        
+        <!-- عرض الآية المفردة -->
+        <div class="verse-modal" id="verse-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="verse-modal-title"></h3>
+                    <button class="close-modal" id="close-verse-modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="verse-arabic" id="verse-modal-arabic"></div>
+                    <div class="verse-translation" id="verse-modal-translation"></div>
+                    <div class="verse-tafsir" id="verse-modal-tafsir"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="play-verse-modal">
+                        <i class="fas fa-play"></i>
+                        تشغيل الآية
+                    </button>
+                    <button class="btn btn-secondary" id="share-verse">
+                        <i class="fas fa-share"></i>
+                        مشاركة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // تحميل بيانات السور عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        loadSurahs();
+        initializeQuranPlayer();
+        initializeQuranControls();
+    });
+</script>

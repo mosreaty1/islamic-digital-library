@@ -1,0 +1,141 @@
+---
+layout: default
+title: الرئيسية
+---
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+        <div class="hero-buttons">
+            <a href="/pages/quran.html" class="btn btn-primary">
+                <i class="fas fa-book-open"></i>
+                قراءة القرآن الكريم
+            </a>
+            <a href="/pages/hadith.html" class="btn btn-secondary">
+                <i class="fas fa-scroll"></i>
+                تصفح الأحاديث النبوية
+            </a>
+            <a href="/pages/audio.html" class="btn btn-accent">
+                <i class="fas fa-play"></i>
+                الاستماع للتلاوات
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <h2>مميزات الموقع</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-quran"></i>
+                <h3>القرآن الكريم كاملاً</h3>
+                <p>النص الكامل للقرآن الكريم مع ترجمات متعددة وتفاسير معتمدة</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-book"></i>
+                <h3>الأحاديث الصحيحة</h3>
+                <p>مجموعات الأحاديث المعتمدة من كتب الحديث الصحيحة</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-volume-up"></i>
+                <h3>مكتبة الصوتيات</h3>
+                <p>تلاوات جميلة بأصوات أشهر القراء والمقرئين</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-wifi"></i>
+                <h3>العمل دون إنترنت</h3>
+                <p>إمكانية الاستخدام بدون اتصال بالإنترنت</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-search"></i>
+                <h3>البحث المتقدم</h3>
+                <p>البحث السريع في آيات القرآن ومتون الأحاديث</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-moon"></i>
+                <h3>الوضع الليلي</h3>
+                <p>وضع مريح للعينين أثناء القراءة الطويلة</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="prayer-times-section">
+    <div class="container">
+        <h2>مواقيت الصلاة</h2>
+        <div class="location-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="current-location">جاري تحديد الموقع...</span>
+        </div>
+        <div id="prayer-times" class="prayer-times-grid">
+            <div class="prayer-time">
+                <span class="prayer-name">الفجر</span>
+                <span class="prayer-time-value" id="fajr-time">--:--</span>
+            </div>
+            <div class="prayer-time">
+                <span class="prayer-name">الظهر</span>
+                <span class="prayer-time-value" id="dhuhr-time">--:--</span>
+            </div>
+            <div class="prayer-time">
+                <span class="prayer-name">العصر</span>
+                <span class="prayer-time-value" id="asr-time">--:--</span>
+            </div>
+            <div class="prayer-time">
+                <span class="prayer-name">المغرب</span>
+                <span class="prayer-time-value" id="maghrib-time">--:--</span>
+            </div>
+            <div class="prayer-time">
+                <span class="prayer-name">العشاء</span>
+                <span class="prayer-time-value" id="isha-time">--:--</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="quick-access-section">
+    <div class="container">
+        <h2>الوصول السريع</h2>
+        <div class="quick-access-grid">
+            <div class="quick-access-card">
+                <h3>سورة اليوم</h3>
+                <p id="daily-surah">جاري التحميل...</p>
+                <a href="#" id="daily-surah-link" class="btn btn-small">اقرأ الآن</a>
+            </div>
+            <div class="quick-access-card">
+                <h3>حديث اليوم</h3>
+                <p id="daily-hadith">جاري التحميل...</p>
+                <a href="#" id="daily-hadith-link" class="btn btn-small">اقرأ المزيد</a>
+            </div>
+            <div class="quick-access-card">
+                <h3>تلاوة اليوم</h3>
+                <p id="daily-recitation">جاري التحميل...</p>
+                <a href="#" id="daily-recitation-link" class="btn btn-small">استمع الآن</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="islamic-calendar-section">
+    <div class="container">
+        <h2>التقويم الهجري</h2>
+        <div class="calendar-info">
+            <div class="hijri-date">
+                <span id="hijri-date">جاري التحميل...</span>
+            </div>
+            <div class="gregorian-date">
+                <span id="gregorian-date">جاري التحميل...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // تحميل مواقيت الصلاة والمحتوى اليومي عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        loadPrayerTimes();
+        loadDailyContent();
+        loadIslamicCalendar();
+    });
+</script>

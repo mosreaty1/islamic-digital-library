@@ -1,0 +1,108 @@
+# Site settings
+title: "Islamic Digital Library"
+description: "Complete Quran, Hadith, and Audio Library - Ad-free Islamic Resource"
+baseurl: "" # Leave empty for GitHub Pages
+url: "https://mosreaty1.github.io" # Replace with your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  pages:# إعدادات الموقع
+title: "المكتبة الإسلامية الرقمية"
+description: "القرآن الكريم والحديث النبوي الشريف - مكتبة إسلامية شاملة"
+baseurl: "" # اتركه فارغاً لـ GitHub Pages
+url: "https://yourusername.github.io" # استبدل باسم المستخدم الخاص بك
+
+# إعدادات البناء
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# المجموعات
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# استثناء من المعالجة
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# إعدادات PWA
+pwa:
+  name: "المكتبة الإسلامية الرقمية"
+  short_name: "المكتبة الإسلامية"
+  theme_color: "#2D5A27"
+  background_color: "#ffffff"
+  display: "standalone"
+
+# اللغة الافتراضية
+default_language: "ar"
+languages: ["ar", "en", "ur", "fr", "tr"]
+
+# إعدادات API
+api:
+  quran_base: "https://api.quran.com/api/v4"
+  hadith_base: "https://api.sunnah.com/v1"
+  audio_base: "https://everyayah.com/data"
+  prayer_times: "https://api.aladhan.com/v1"
+
+# إعدادات المحتوى
+content:
+  show_arabic: true
+  show_translation: true
+  show_tafsir: true
+  default_reciter: "mishary"
+  tajweed_colors: true
+    output: true
+    permalink: /:name/
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# PWA settings
+pwa:
+  name: "Islamic Digital Library"
+  short_name: "IslamicLib"
+  theme_color: "#2D5A27"
+  background_color: "#ffffff"
+  display: "standalone"
+
+# Default language
+default_language: "en"
+languages: ["en", "ar", "ur", "fr", "tr"]
+
+# API Settings
+api:
+  quran_base: "https://api.quran.com/api/v4"
+  hadith_base: "https://api.sunnah.com/v1"
+  audio_base: "https://everyayah.com/data"

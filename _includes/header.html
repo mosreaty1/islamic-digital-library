@@ -1,0 +1,76 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">
+                    <i class="fas fa-mosque"></i>
+                    <span>{{ site.title }}</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>الرئيسية</a></li>
+                    <li><a href="{{ '/pages/quran.html' | relative_url }}" {% if page.url contains 'quran' %}class="active"{% endif %}>القرآن الكريم</a></li>
+                    <li><a href="{{ '/pages/hadith.html' | relative_url }}" {% if page.url contains 'hadith' %}class="active"{% endif %}>الأحاديث</a></li>
+                    <li><a href="{{ '/pages/audio.html' | relative_url }}" {% if page.url contains 'audio' %}class="active"{% endif %}>التلاوات</a></li>
+                    <li><a href="{{ '/pages/about.html' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}>عن الموقع</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <div class="search-toggle">
+                    <button id="search-toggle" class="btn-icon" title="بحث">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="theme-toggle">
+                    <button id="theme-toggle" class="btn-icon" title="تبديل الوضع الليلي">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                
+                <div class="lang-toggle">
+                    <button id="lang-toggle" class="btn-icon" title="تغيير اللغة">
+                        <i class="fas fa-language"></i>
+                        <span class="lang-text">العربية</span>
+                    </button>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <button id="mobile-menu-toggle" class="btn-icon mobile-only">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- شريط البحث العام -->
+        <div class="search-bar" id="global-search">
+            <div class="search-container">
+                <input type="text" id="global-search-input" placeholder="ابحث في القرآن الكريم أو الأحاديث أو التلاوات...">
+                <button class="search-btn" id="global-search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="search-close" id="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-filters">
+                <label>
+                    <input type="radio" name="search-type" value="quran" checked>
+                    <span>القرآن الكريم</span>
+                </label>
+                <label>
+                    <input type="radio" name="search-type" value="hadith">
+                    <span>الأحاديث</span>
+                </label>
+                <label>
+                    <input type="radio" name="search-type" value="audio">
+                    <span>التلاوات</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</header>

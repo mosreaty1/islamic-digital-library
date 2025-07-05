@@ -1,0 +1,151 @@
+{
+  "name": "المكتبة الإسلامية الرقمية",
+  "short_name": "المكتبة الإسلامية",
+  "description": "القرآن الكريم والحديث النبوي الشريف - مكتبة إسلامية شاملة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2D5A27",
+  "orientation": "portrait-primary",
+  "lang": "ar",
+  "dir": "rtl",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/images/screenshot-narrow.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": [
+    "education",
+    "reference",
+    "books",
+    "religion"
+  ],
+  "shortcuts": [
+    {
+      "name": "القرآن الكريم",
+      "short_name": "القرآن",
+      "description": "اقرأ القرآن الكريم",
+      "url": "/pages/quran.html",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-quran.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "الأحاديث النبوية",
+      "short_name": "الأحاديث",
+      "description": "تصفح الأحاديث النبوية",
+      "url": "/pages/hadith.html",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-hadith.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "التلاوات الصوتية",
+      "short_name": "التلاوات",
+      "description": "استمع للتلاوات",
+      "url": "/pages/audio.html",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-audio.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+islamic",
+      "url": "/?handler=%s"
+    }
+  ],
+  "display_override": [
+    "window-controls-overlay",
+    "minimal-ui",
+    "standalone",
+    "browser"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-new"
+  }
+}

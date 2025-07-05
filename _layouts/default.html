@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- PWA Meta -->
+    <meta name="theme-color" content="#2D5A27">
+    <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/icon-192.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/icon-192.png' | relative_url }}">
+    
+    <!-- الخطوط العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- الأنماط -->
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/arabic.css' | relative_url }}">
+    
+    <!-- SEO -->
+    {% seo %}
+</head>
+<body class="theme-light arabic-layout">
+    {% include header.html %}
+    
+    <main role="main" class="main-content">
+        {{ content }}
+    </main>
+    
+    {% include footer.html %}
+    
+    <!-- طبقة التحميل -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>جاري التحميل...</p>
+        </div>
+    </div>
+    
+    <!-- قائمة الجوال -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">الرئيسية</a></li>
+                    <li><a href="{{ '/pages/quran.html' | relative_url }}">القرآن الكريم</a></li>
+                    <li><a href="{{ '/pages/hadith.html' | relative_url }}">الأحاديث</a></li>
+                    <li><a href="{{ '/pages/audio.html' | relative_url }}">التلاوات</a></li>
+                    <li><a href="{{ '/pages/about.html' | relative_url }}">عن الموقع</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- الاشعارات -->
+    <div id="notification-container" class="notification-container"></div>
+    
+    <!-- سكريبت الصفحة الرئيسية -->
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/js/arabic.js' | relative_url }}"></script>
+    
+    <!-- سكريبت خاص بكل صفحة -->
+    {% if page.url contains 'quran' %}
+        <script src="{{ '/js/quran.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.url contains 'hadith' %}
+        <script src="{{ '/js/hadith.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.url contains 'audio' %}
+        <script src="{{ '/js/audio.js' | relative_url }}"></script>
+    {% endif %}
+    
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
+                    .then(function(registration) {
+                        console.log('تم تسجيل ServiceWorker بنجاح');
+                    })
+                    .catch(function(err) {
+                        console.log('فشل تسجيل ServiceWorker: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

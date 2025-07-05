@@ -1,0 +1,221 @@
+---
+layout: default
+title: الأحاديث النبوية
+---
+
+<div class="hadith-page">
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                <i class="fas fa-scroll"></i>
+                الأحاديث النبوية الشريفة
+            </h1>
+            <p>استعرض الأحاديث الصحيحة من كتب السنة المعتمدة</p>
+        </div>
+        
+        <!-- أدوات البحث والتصفية -->
+        <div class="hadith-controls">
+            <div class="search-container">
+                <input type="text" id="hadith-search" placeholder="ابحث في متن الحديث أو الراوي...">
+                <button class="search-btn" id="search-hadith-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="collection-filter">الكتاب:</label>
+                    <select id="collection-filter">
+                        <option value="">جميع الكتب</option>
+                        <option value="bukhari">صحيح البخاري</option>
+                        <option value="muslim">صحيح مسلم</option>
+                        <option value="abudawud">سنن أبي داود</option>
+                        <option value="tirmidhi">سنن الترمذي</option>
+                        <option value="nasai">سنن النسائي</option>
+                        <option value="ibnmajah">سنن ابن ماجه</option>
+                        <option value="ahmad">مسند أحمد</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="narrator-filter">الراوي:</label>
+                    <select id="narrator-filter">
+                        <option value="">جميع الرواة</option>
+                        <option value="abuhurayra">أبو هريرة</option>
+                        <option value="aisha">عائشة رضي الله عنها</option>
+                        <option value="abdullah">عبد الله بن عمر</option>
+                        <option value="anas">أنس بن مالك</option>
+                        <option value="abu-bakr">أبو بكر الصديق</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="grade-filter">الدرجة:</label>
+                    <select id="grade-filter">
+                        <option value="">جميع الدرجات</option>
+                        <option value="sahih">صحيح</option>
+                        <option value="hasan">حسن</option>
+                        <option value="daif">ضعيف</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- مجموعات الأحاديث -->
+        <div class="hadith-collections">
+            <h2>مجموعات الأحاديث</h2>
+            <div class="collections-grid">
+                <div class="collection-card" data-collection="bukhari">
+                    <div class="collection-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>صحيح البخاري</h3>
+                    <p>أصح الكتب بعد كتاب الله</p>
+                    <span class="hadith-count">7563 حديث</span>
+                </div>
+                
+                <div class="collection-card" data-collection="muslim">
+                    <div class="collection-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>صحيح مسلم</h3>
+                    <p>ثاني أصح الكتب بعد البخاري</p>
+                    <span class="hadith-count">5362 حديث</span>
+                </div>
+                
+                <div class="collection-card" data-collection="abudawud">
+                    <div class="collection-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>سنن أبي داود</h3>
+                    <p>من كتب السنن الأربعة</p>
+                    <span class="hadith-count">4800 حديث</span>
+                </div>
+                
+                <div class="collection-card" data-collection="tirmidhi">
+                    <div class="collection-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>سنن الترمذي</h3>
+                    <p>جامع الإمام الترمذي</p>
+                    <span class="hadith-count">3956 حديث</span>
+                </div>
+                
+                <div class="collection-card" data-collection="nasai">
+                    <div class="collection-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>سنن النسائي</h3>
+                    <p>المجتبى من السنن</p>
+                    <span class="hadith-count">5761 حديث</span>
+                </div>
+                
+                <div class="collection-card" data-collection="ibnmajah">
+                    <div class="collection-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>سنن ابن ماجه</h3>
+                    <p>آخر كتب السنن الستة</p>
+                    <span class="hadith-count">4341 حديث</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- عرض الأحاديث -->
+        <div class="hadith-results" id="hadith-results">
+            <div class="results-header">
+                <h2>نتائج البحث</h2>
+                <span class="results-count" id="results-count">0 حديث</span>
+            </div>
+            
+            <div class="hadith-list" id="hadith-list">
+                <!-- سيتم ملء هذا القسم بواسطة JavaScript -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- أزرار الصفحات -->
+            </div>
+        </div>
+        
+        <!-- حديث اليوم -->
+        <div class="daily-hadith-section">
+            <h2>حديث اليوم</h2>
+            <div class="daily-hadith-card" id="daily-hadith-card">
+                <div class="hadith-text" id="daily-hadith-text">
+                    جاري التحميل...
+                </div>
+                <div class="hadith-narrator" id="daily-hadith-narrator">
+                    
+                </div>
+                <div class="hadith-source" id="daily-hadith-source">
+                    
+                </div>
+                <div class="hadith-actions">
+                    <button class="btn btn-primary" id="share-daily-hadith">
+                        <i class="fas fa-share"></i>
+                        مشاركة
+                    </button>
+                    <button class="btn btn-secondary" id="bookmark-daily-hadith">
+                        <i class="fas fa-bookmark"></i>
+                        حفظ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تفاصيل الحديث -->
+<div class="hadith-modal" id="hadith-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="hadith-modal-title">تفاصيل الحديث</h3>
+            <button class="close-modal" id="close-hadith-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="hadith-full-text" id="hadith-modal-text"></div>
+            <div class="hadith-details">
+                <div class="detail-item">
+                    <strong>الراوي:</strong>
+                    <span id="hadith-modal-narrator"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>المصدر:</strong>
+                    <span id="hadith-modal-source"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>رقم الحديث:</strong>
+                    <span id="hadith-modal-number"></span>
+                </div>
+                <div class="detail-item">
+                    <strong>الدرجة:</strong>
+                    <span id="hadith-modal-grade"></span>
+                </div>
+            </div>
+            <div class="hadith-explanation" id="hadith-modal-explanation">
+                <!-- شرح الحديث -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="share-hadith-modal">
+                <i class="fas fa-share"></i>
+                مشاركة
+            </button>
+            <button class="btn btn-secondary" id="bookmark-hadith-modal">
+                <i class="fas fa-bookmark"></i>
+                حفظ
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // تحميل الأحاديث عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        loadHadithCollections();
+        loadDailyHadith();
+        initializeHadithSearch();
+    });
+</script>

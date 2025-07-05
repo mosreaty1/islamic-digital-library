@@ -1,0 +1,83 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ site.title }}</h3>
+                <p>{{ site.description }}</p>
+                <div class="social-links">
+                    <a href="#" title="مشاركة على فيسبوك" aria-label="فيسبوك">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" title="مشاركة على تويتر" aria-label="تويتر">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" title="مشاركة على واتساب" aria-label="واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" title="مشاركة على تليجرام" aria-label="تليجرام">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" title="مشاركة على لينكدان" aria-label="لينكدان">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">الرئيسية</a></li>
+                    <li><a href="{{ '/pages/quran.html' | relative_url }}">القرآن الكريم</a></li>
+                    <li><a href="{{ '/pages/hadith.html' | relative_url }}">الأحاديث</a></li>
+                    <li><a href="{{ '/pages/audio.html' | relative_url }}">التلاوات</a></li>
+                    <li><a href="{{ '/pages/about.html' | relative_url }}">عن الموقع</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>المصادر</h4>
+                <ul>
+                    <li><a href="https://quran.com" target="_blank" rel="noopener">موقع القرآن الكريم</a></li>
+                    <li><a href="https://sunnah.com" target="_blank" rel="noopener">موقع السنة النبوية</a></li>
+                    <li><a href="https://tanzil.net" target="_blank" rel="noopener">مشروع تنزيل</a></li>
+                    <li><a href="https://everyayah.com" target="_blank" rel="noopener">موقع كل آية</a></li>
+                    <li><a href="https://islamqa.info" target="_blank" rel="noopener">الإسلام سؤال وجواب</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>اللغات المتاحة</h4>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="ar">العربية</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="ur">اردو</button>
+                    <button class="lang-btn" data-lang="fr">Français</button>
+                    <button class="lang-btn" data-lang="tr">Türkçe</button>
+                    <button class="lang-btn" data-lang="id">Bahasa Indonesia</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-disclaimer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    تنبيه: يرجى التحقق من صحة المحتوى مع العلماء المختصين. الموقع يسعى لتقديم محتوى صحيح ولكن لا يتحمل المسؤولية عن أي أخطاء قد تحدث.
+                </p>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. جميع الحقوق محفوظة.</p>
+                <p>
+                    مطور بـ <i class="fas fa-heart text-red"></i> لوجه الله تعالى
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#" class="footer-link">سياسة الخصوصية</a>
+                <a href="#" class="footer-link">شروط الاستخدام</a>
+                <a href="#" class="footer-link">اتصل بنا</a>
+            </div>
+        </div>
+    </div>
+</footer>
