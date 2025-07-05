@@ -18,7 +18,7 @@ collections:
 title: "المكتبة الإسلامية الرقمية"
 description: "القرآن الكريم والحديث النبوي الشريف - مكتبة إسلامية شاملة"
 baseurl: "" # اتركه فارغاً لـ GitHub Pages
-url: "https://yourusername.github.io" # استبدل باسم المستخدم الخاص بك
+url: "https://mosreaty1.github.io" # استبدل باسم المستخدم الخاص بك
 
 # إعدادات البناء
 markdown: kramdown
@@ -106,3 +106,15 @@ api:
   quran_base: "https://api.quran.com/api/v4"
   hadith_base: "https://api.sunnah.com/v1"
   audio_base: "https://everyayah.com/data"
+  title: "المكتبة الإسلامية الرقمية"
+description: "القرآن الكريم والحديث النبوي الشريف - مكتبة إسلامية شاملة"
+
+# إعدادات Jekyll الأساسية
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# إعدادات GitHub Pages
+remote_theme: ""
